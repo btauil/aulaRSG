@@ -45,7 +45,7 @@ fi
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 make_fastq "$WORK/sample.fastq.gz"
-( cd "$WORK" && bash "$PIPELINE" sample.fastq.gz ) >"$WORK/run.log" 2>&1
+( cd "$WORK" && bash "$PIPELINE" sample.fastq.gz . ) >"$WORK/run.log" 2>&1
 rc=$?
 
 
@@ -56,14 +56,14 @@ else
 fi
 
 
-if ls "$WORK"/results/fastqc/*_fastqc.html >/dev/null 2>&1; then
+if ls "$WORK"/resultados/fastqc/*_fastqc.html >/dev/null 2>&1; then
  ok "FastQC report produced"
 else
  no "FastQC report produced"
 fi
 
 
-if ls "$WORK"/results/trimmed/*_trimmed.fastq.gz >/dev/null 2>&1; then
+if ls "$WORK"/resultados/trimmomatic/*_trimmed.fastq.gz >/dev/null 2>&1; then
  ok "trimmed FASTQ produced"
 else
  no "trimmed FASTQ produced"

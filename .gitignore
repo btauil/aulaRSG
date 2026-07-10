@@ -18,3 +18,8 @@ ENV/
 *.fasta.out
 filtradas.fasta
 filtradas.R.fasta
+
+# datasets
+app/data/*
+app/resultados/*
+
