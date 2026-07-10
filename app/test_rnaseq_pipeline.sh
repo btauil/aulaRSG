@@ -56,14 +56,14 @@ else
 fi
 
 
-if ls "$WORK"/results/fastqc/*_fastqc.html >/dev/null 2>&1; then
+if ls "$WORK"/resultados/fastqc/*_fastqc.html >/dev/null 2>&1; then
  ok "FastQC report produced"
 else
  no "FastQC report produced"
 fi
 
 
-if ls "$WORK"/results/trimmed/*_trimmed.fastq.gz >/dev/null 2>&1; then
+if ls "$WORK"/resultados/trimmed/*_trimmed.fastq.gz >/dev/null 2>&1; then
  ok "trimmed FASTQ produced"
 else
  no "trimmed FASTQ produced"
