@@ -24,5 +24,11 @@ echo "[1/3] Rodando FastQC..."
 fastqc "$INPUT_FASTQ" --outdir=resultados/fastqc
 
 # 2. Trimmomatic
+RESULTS_TRIMMOMATIC="resultados/trimmomatic"
+mkdir -p "$RESULTS_TRIMMOMATIC"
+
+TRIMMED_FASTQ="$RESULTS_TRIMMOMATIC/$(basename "$INPUT_FASTQ" .fastq.gz)_trimmed.fastq.gz"
+echo "[2/3] Rodando o Trimmomatic..."
+trimmomatic SE -phred33 "$INPUT_FASTQ" "$TRIMMED_FASTQ" LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 
 # 3. Salmon

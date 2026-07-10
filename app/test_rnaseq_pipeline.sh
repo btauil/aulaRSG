@@ -63,7 +63,7 @@ else
 fi
 
 
-if ls "$WORK"/resultados/trimmed/*_trimmed.fastq.gz >/dev/null 2>&1; then
+if ls "$WORK"/resultados/trimmomatic/*_trimmed.fastq.gz >/dev/null 2>&1; then
  ok "trimmed FASTQ produced"
 else
  no "trimmed FASTQ produced"
