@@ -45,7 +45,7 @@ fi
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 make_fastq "$WORK/sample.fastq.gz"
-( cd "$WORK" && bash "$PIPELINE" sample.fastq.gz ) >"$WORK/run.log" 2>&1
+( cd "$WORK" && bash "$PIPELINE" sample.fastq.gz . ) >"$WORK/run.log" 2>&1
 rc=$?
 
 
