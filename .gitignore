@@ -21,4 +21,5 @@ filtradas.R.fasta
 
 # datasets
 app/data/*
+app/resultados/*
 
