@@ -17,8 +17,11 @@ if [ ! -f "$INPUT_FASTQ" ]; then
     exit 1
 fi
 
-
 # 1. FastQC
+mkdir -p resultados/fastqc
+
+echo "[1/3] Rodando FastQC..."
+fastqc "$INPUT_FASTQ" --outdir=resultados/fastqc
 
 # 2. Trimmomatic
 
