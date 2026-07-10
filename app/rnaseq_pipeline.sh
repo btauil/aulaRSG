@@ -42,9 +42,9 @@ trimmomatic SE -phred33 "$INPUT_FASTQ" "$TRIMMED_FASTQ" LEADING:3 TRAILING:3 SLI
 RESULTS_SALMON="resultados/salmon"
 mkdir -p "$RESULTS_SALMON"
 
-echo "[3/3] Rodando o Salmon..."
+#echo "[3/3] Rodando o Salmon..."
 
-salmon quant -i $INPUT_INDEX -l A -r "$TRIMMED_FASTQ" -o "$RESULTS_SALMON/quant_output"
+#salmon quant -i $INPUT_INDEX -l A -r "$TRIMMED_FASTQ" -o "$RESULTS_SALMON/quant_output"
 
 echo "================================="
 echo "Pipeline RNAseq concluida!"
